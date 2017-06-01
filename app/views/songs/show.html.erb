@@ -1,0 +1,18 @@
+<a style="margin-left: 500px;" href="/songs">Dashboard</a> | <a href="/logout">Log Out</a>
+<br>
+<p>Other who added <%= @song.artist %> - <%= @song.title %></p>
+<table style="border-style: solid; width: 550px; text-align: center;">
+	<tr>
+		<th>Name</th>
+		<th>Times Added</th>
+	</tr>
+
+	<% @list.each do |list|%>
+		<% if list.user != @user%>
+	<tr>
+		<td><a href="/users/<%=list.user.id%>"><%= list.user.name %></a></td>
+		<td><%= list.adds %></td>
+	</tr>
+		<% end %>
+	<% end %>
+</table>

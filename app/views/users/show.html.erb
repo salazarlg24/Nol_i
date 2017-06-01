@@ -1,0 +1,18 @@
+<a style="margin-left: 500px;" href="/songs">Dashboard</a> | <a href="/logout">Log Out</a>
+<br>
+<h1><%= @user.name %>'s Playlist </h1>
+
+<table style="border-style: solid; width: 550px; text-align: center;">
+	<tr>
+		<th>Artist</th>
+		<th>Title</th>
+		<th>Times Added</th>
+	</tr>
+	<% @list.each do |list|%>
+	<tr>
+		<td><%= list.song.artist %></td>
+		<td><%= list.song.title %></td>
+		<td><%= list.adds %></td>
+	</tr>
+	<% end %>
+</table>
